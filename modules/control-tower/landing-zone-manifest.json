@@ -1,0 +1,22 @@
+{
+  "accessManagement": {
+    "enabled": true
+  },
+  "backup": {
+    "enabled": false
+  },
+  "centralizedLogging": {
+    "enabled": true,
+    "accountId": ""
+  },
+  "config": {
+    "enabled": true,
+    "accountId": ""
+  },
+  "securityRoles": {
+    "enabled": true
+  },
+  "governedRegions": [
+    "ap-south-1"
+  ]
+}
