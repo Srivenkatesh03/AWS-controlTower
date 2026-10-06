@@ -15,7 +15,19 @@ module "accounts" {
   accounts             = var.accounts
   organizational_units = module.organizational_units.organizational_units
 
-  depends_on = [module.organizational_units]
+  depends_on = [
+    module.organizational_units
+  ]
+}
+
+module "control_tower_iam" {
+  source = "./modules/control-tower-iam"
+
+  depends_on = [
+    module.organizations,
+    module.organizational_units,
+    module.accounts
+  ]
 }
 
 module "control_tower" {
@@ -32,5 +44,6 @@ module "control_tower" {
     module.organizations,
     module.organizational_units,
     module.accounts,
+    module.control_tower_iam
   ]
 }
